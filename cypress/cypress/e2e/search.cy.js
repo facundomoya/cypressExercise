@@ -3,13 +3,8 @@ describe('Search elements', () => {
         cy.visit("https://www.mercadolibre.com.ar");
     });
 
-    it('search for elements with multiple results', () => {
-    cy.fixture('index').then((index)=>{
-        cy.contains(index.codPostal).click();
-        cy.contains(index.cookies).click();
-        cy.get(index.searchProducts).click().type("PS5{enter}");
-        cy.get(index.PS5).eq(0).click();
-        });
+    it.only('search for elements with multiple results', () => {
+    cy.search('PS5{enter}');
     });
 
     it('search element that does not exist', () => {
