@@ -1,3 +1,5 @@
+const { it } = require("mocha");
+
 describe('Search elements', () => {
     beforeEach(() => {
         cy.visit("https://www.mercadolibre.com.ar");
@@ -13,6 +15,12 @@ describe('Search elements', () => {
         cy.contains(index.cookies).click();
         cy.get(index.searchProducts).click().type("rvvasdsadsd{enter}");
         cy.get(index.searchFailed);
+        });
+    });
+
+    it.only('search with elements with special code', () => {
+        cy.readFile('cypress/support/text/search').then((text)=>{
+            cy.search(text);
         });
     });
 });
