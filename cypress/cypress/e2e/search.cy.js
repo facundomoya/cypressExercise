@@ -1,5 +1,3 @@
-const { it } = require("mocha");
-
 describe('Search elements', () => {
     beforeEach(() => {
         cy.visit("https://www.mercadolibre.com.ar");
@@ -18,8 +16,8 @@ describe('Search elements', () => {
         });
     });
 
-    it.only('search with elements with special code', () => {
-        cy.readFile('cypress/support/text/search').then((text)=>{
+    it('search with elements with special code', () => {
+        cy.readFile('cypress/support/text/search.txt').then((text)=>{
             cy.search(text);
         });
     });
