@@ -15,4 +15,10 @@ describe('Search elements', () => {
         cy.get(index.searchFailed);
         });
     });
+
+    it('search with elements with special code', () => {
+        cy.readFile('cypress/support/text/search.txt').then((text)=>{
+            cy.search(text);
+        });
+    });
 });
