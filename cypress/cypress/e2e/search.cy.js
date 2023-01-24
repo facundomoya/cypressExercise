@@ -3,8 +3,8 @@ describe('Search elements', () => {
         cy.visit("https://www.mercadolibre.com.ar");
     });
 
-    it.only('search for elements with multiple results', () => {
-    cy.search('PS5{enter}');
+    it('search for elements with multiple results', () => {
+        cy.search('PS5{enter}');
     });
 
     it('search element that does not exist', () => {
